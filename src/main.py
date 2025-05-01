@@ -468,7 +468,7 @@ class CriptografiaHibrida:
         encryptor = cipher.encryptor()
         texto_cifrado = encryptor.update(texto_padded) + encryptor.finalize()
         
-        # HMAC para autenticação com Blake3 (256 bits)
+        # HMAC para autenticação com Blake3 (32 bytes/256 bits)
         hmac = blake3.blake3(
             salt + iv + texto_cifrado,
             key=chave
